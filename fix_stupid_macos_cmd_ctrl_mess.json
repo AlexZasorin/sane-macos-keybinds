@@ -1,0 +1,118 @@
+{
+    "title": "Advanced Key Swaps",
+    "rules": [
+        {
+            "description": "Swap Ctrl with Command globally",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "left_control"
+                    }]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_command",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "right_control"
+                    }]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_control",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "left_command"
+                    }]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_control",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "right_command"
+                    }]
+                }
+            ]
+        },
+        {
+            "description": "Swap Ctrl+Tab with Cmd+Tab",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "mandatory": ["control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "tab",
+                        "modifiers": ["command"]
+                    }]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "tab",
+                        "modifiers": ["control"]
+                    }]
+                }
+            ]
+        },
+        {
+            "description": "Preserve Ctrl+C for Terminal and iTerm2",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "c",
+                        "modifiers": ["control"]
+                    }],
+                    "conditions": [{
+                        "type": "frontmost_application_if",
+                        "bundle_identifiers": [
+                            "^com\\.apple\\.Terminal$",
+                            "^com\\.googlecode\\.iterm2$"
+                        ]
+                    }]
+                }
+            ]
+        }
+    ]
+}
+
