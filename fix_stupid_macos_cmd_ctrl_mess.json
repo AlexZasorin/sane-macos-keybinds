@@ -112,7 +112,31 @@
                     }]
                 }
             ]
+        },
+	{
+            "description": "Preserve Ctrl+E for Microsoft Outlook",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [{
+                        "key_code": "e",
+                        "modifiers": ["control"]
+                    }],
+                    "conditions": [{
+                        "type": "frontmost_application_if",
+                        "bundle_identifiers": [
+                            "^com\\.microsoft\\.Outlook$"
+                        ]
+                    }]
+                }
+            ]
         }
     ]
 }
-
