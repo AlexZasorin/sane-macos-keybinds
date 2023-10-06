@@ -5,9 +5,9 @@ Swaps Ctrl/Command and attempts to keep common keybinds as close to default Wind
 <br />
 
 ## Included Rules
-### 1. Swap Command and Control Globally
+### 1. Swap Command and Control Globally excluding Terminal and iTerm2
 
-### 2. Preserve Ctrl+C for Terminal and iTerm2
+### 2. Swap Ctrl/Cmd + x/c/v for Terminal and iTerm2 
 For VSCode's integrated terminal add this to `keybindings.json`:
 ```
   {
@@ -23,11 +23,16 @@ For VSCode's integrated terminal add this to `keybindings.json`:
   }
 ```
 
-### 3. Swap Command + Tab with Ctrl + Tab
+### 3. Swap Command + Tab with Ctrl + Tab excluding Terminal and iTerm2
 
 ### 4. Preserve Ctrl+E for Outlook
 
 ### 5. Change Caps Lock to Escape (optional)
+
+<br />
+
+## TODO
+- Fix Mac Cmd + ` mapping conflict with VSCode
 
 <br />
 
