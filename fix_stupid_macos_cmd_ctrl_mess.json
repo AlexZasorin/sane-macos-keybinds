@@ -298,79 +298,158 @@
       ]
     },
     {
-        "description": "Swap Ctrl+Tab with Cmd+Tab globally excluding Terminal and iTerm2",
-        "manipulators": [
+      "description": "Swap Ctrl+Tab with Cmd+Tab globally excluding Terminal and iTerm2",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "tab",
+              "modifiers": {
+                  "mandatory": ["control"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{
+              "key_code": "tab",
+              "modifiers": ["command"]
+          }],
+          "conditions": [
             {
-                "type": "basic",
-                "from": {
-                    "key_code": "tab",
-                    "modifiers": {
-                        "mandatory": ["control"],
-                        "optional": ["any"]
-                    }
-                },
-                "to": [{
-                    "key_code": "tab",
-                    "modifiers": ["command"]
-                }],
-                "conditions": [
-                  {
-                    "type": "frontmost_application_unless",
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^com\\.googlecode\\.iterm2$"
-                    ]
-                  }
-                ]
-            },
-            {
-                "type": "basic",
-                "from": {
-                    "key_code": "tab",
-                    "modifiers": {
-                        "mandatory": ["command"],
-                        "optional": ["any"]
-                    }
-                },
-                "to": [{
-                    "key_code": "tab",
-                    "modifiers": ["control"]
-                }],
-                "conditions": [
-                  {
-                    "type": "frontmost_application_unless",
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^com\\.googlecode\\.iterm2$"
-                    ]
-                  }
-                ]
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
             }
-        ]
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "tab",
+              "modifiers": {
+                  "mandatory": ["command"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [{
+              "key_code": "tab",
+              "modifiers": ["control"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "description": "Preserve Ctrl+E for Microsoft Outlook",
       "manipulators": [
-          {
-              "type": "basic",
-              "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                      "mandatory": ["command"],
-                      "optional": ["any"]
-                  }
-              },
-              "to": [{
-                  "key_code": "e",
-                  "modifiers": ["control"]
-              }],
-              "conditions": [{
-                  "type": "frontmost_application_if",
-                  "bundle_identifiers": [
-                      "^com\\.microsoft\\.Outlook$"
-                  ]
-              }]
-          }
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": ["command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [{
+            "key_code": "e",
+            "modifiers": ["control"]
+          }],
+          "conditions": [{
+            "type": "frontmost_application_if",
+            "bundle_identifiers": [
+              "^com\\.microsoft\\.Outlook$"
+            ]
+          }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Outlook$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Preserve Cmd + ` keybind",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        }
       ]
     }
   ]
