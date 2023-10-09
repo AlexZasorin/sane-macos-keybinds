@@ -1,6 +1,6 @@
 # Sane MacOS Karabiner Elements Rules
 
-Swaps Ctrl/Command and attempts to keep common keybinds as close to default Windows/Linux keybinds as possible (subject to my personal preference).
+Swaps Ctrl/Command and attempts to keep common keybinds as close to default Windows/Linux keybinds as possible for my personal setup.
 
 <br />
 
@@ -28,18 +28,4 @@ For VSCode's integrated terminal add this to `keybindings.json`:
 ### 4. Preserve Ctrl+E for Outlook
 
 ### 5. Change Caps Lock to Escape (optional)
-
-<br />
-
-## TODO
-- Fix Mac Cmd + ` mapping conflict with VSCode
-
-<br />
-
-## FAQ
-### Q: Why not just learn default Mac keybinds?
-A: Why not write a script that randomizes your keybinds on a daily basis?
-
-### Q: These aren't sane.
-A: They are to me and that's all that I care about.
 
