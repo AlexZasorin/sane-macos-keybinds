@@ -26,6 +26,15 @@
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$"
               ]
+            },
+            {
+              "type": "not",
+              "conditions": [
+                {
+                  "type": "key_code",
+                  "key_code": "spacebar"
+                }
+              ]
             }
           ]
         },
@@ -50,6 +59,15 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$"
+              ]
+            },
+            {
+              "type": "not",
+              "conditions": [
+                {
+                  "type": "key_code",
+                  "key_code": "spacebar"
+                }
               ]
             }
           ]
@@ -107,39 +125,8 @@
       ]
     },
     {
-      "description": "Map Cmd+X/C/V to Ctrl+X/C/V for Terminal and iTerm2",
+      "description": "Map Cmd+X/V to Ctrl+X/V for Terminal and iTerm2",
       "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "c",
-            "modifiers": {
-              "mandatory": [
-                "command"
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
-              ]
-            }
-          ]
-        },
         {
           "type": "basic",
           "from": {
@@ -189,37 +176,6 @@
               "key_code": "v",
               "modifiers": [
                 "control"
-              ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "c",
-            "modifiers": {
-              "mandatory": [
-                "control"
-              ],
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "command"
               ]
             }
           ],
@@ -303,16 +259,24 @@
         {
           "type": "basic",
           "from": {
-              "key_code": "tab",
-              "modifiers": {
-                  "mandatory": ["control"],
-                  "optional": ["any"]
-              }
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
           },
-          "to": [{
+          "to": [
+            {
               "key_code": "tab",
-              "modifiers": ["command"]
-          }],
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
           "conditions": [
             {
               "type": "frontmost_application_unless",
@@ -326,16 +290,24 @@
         {
           "type": "basic",
           "from": {
-              "key_code": "tab",
-              "modifiers": {
-                  "mandatory": ["command"],
-                  "optional": ["any"]
-              }
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
           },
-          "to": [{
+          "to": [
+            {
               "key_code": "tab",
-              "modifiers": ["control"]
-          }],
+              "modifiers": [
+                "control"
+              ]
+            }
+          ],
           "conditions": [
             {
               "type": "frontmost_application_unless",
@@ -356,20 +328,30 @@
           "from": {
             "key_code": "e",
             "modifiers": {
-              "mandatory": ["command"],
-              "optional": ["any"]
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
             }
           },
-          "to": [{
-            "key_code": "e",
-            "modifiers": ["control"]
-          }],
-          "conditions": [{
-            "type": "frontmost_application_if",
-            "bundle_identifiers": [
-              "^com\\.microsoft\\.Outlook$"
-            ]
-          }]
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.Outlook$"
+              ]
+            }
+          ]
         },
         {
           "type": "basic",
