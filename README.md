@@ -7,6 +7,8 @@ Swaps Ctrl/Command and attempts to keep common keybinds as close to default Wind
 ## Included Rules
 ### 1. Swap Command and Control Globally excluding Terminal and iTerm2
 
+Excludes Cmd + Spacebar key combo since this matches Windows's "spotlight" search from PowerToys.
+
 ### 2. Map Cmd+X/C/V to Ctrl+X/C/V for Terminal and iTerm2
 For VSCode's integrated terminal add this to `keybindings.json`:
 ```
