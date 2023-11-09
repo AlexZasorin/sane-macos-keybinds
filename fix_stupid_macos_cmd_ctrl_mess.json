@@ -26,15 +26,6 @@
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$"
               ]
-            },
-            {
-              "type": "not",
-              "conditions": [
-                {
-                  "type": "key_code",
-                  "key_code": "spacebar"
-                }
-              ]
             }
           ]
         },
@@ -59,15 +50,6 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$"
-              ]
-            },
-            {
-              "type": "not",
-              "conditions": [
-                {
-                  "type": "key_code",
-                  "key_code": "spacebar"
-                }
               ]
             }
           ]
@@ -303,6 +285,73 @@
           "to": [
             {
               "key_code": "tab",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Swap Ctrl+Space with Cmd+Space globally excluding Terminal and iTerm2",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "spacebar",
               "modifiers": [
                 "control"
               ]
