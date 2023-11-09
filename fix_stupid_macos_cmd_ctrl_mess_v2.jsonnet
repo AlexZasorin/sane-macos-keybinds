@@ -113,35 +113,36 @@ local makeDualRule(key, mandatory_modifiers, optional_modifiers=[], except_apps=
         makeDualRule('/', ['command', 'shift']) +
         makeDualRule('[', ['command', 'shift']) +
         makeDualRule(']', ['command', 'shift']) +
-        makeDualRule('a', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('b', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('c', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('d', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('e', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('f', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('g', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('h', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('a', ['command', 'shift']) +
+        makeDualRule('b', ['command', 'shift']) +
+        makeDualRule('c', ['command', 'shift']) +
+        makeDualRule('d', ['command', 'shift']) +
+        makeDualRule('e', ['command', 'shift']) +
+        makeDualRule('f', ['command', 'shift']) +
+        makeDualRule('g', ['command', 'shift']) +
+        makeDualRule('h', ['command', 'shift']) +
         makeDualRule('i', ['command', 'shift']) +
-        makeDualRule('j', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('k', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('j', ['command', 'shift']) +
+        makeDualRule('k', ['command', 'shift']) +
         makeDualRule('l', ['command', 'shift']) +
         makeDualRule('m', ['command', 'shift']) +
-        makeDualRule('n', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('n', ['command', 'shift']) +
         makeDualRule('o', ['command', 'shift']) +
-        makeDualRule('p', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('p', ['command', 'shift']) +
         makeDualRule('q', ['command', 'shift']) +
-        makeDualRule('r', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('s', ['command', 'shift'], ["any"], appExclusions) +
-        makeDualRule('t', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('r', ['command', 'shift']) +
+        makeDualRule('s', ['command', 'shift']) +
+        makeDualRule('t', ['command', 'shift']) +
         makeDualRule('t', ['command', 'shift']) +
         makeDualRule('u', ['command', 'shift']) +
         makeDualRule('v', ['command', 'shift']) +
-        makeDualRule('w', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('w', ['command', 'shift']) +
         makeDualRule('x', ['command', 'shift']) +
         makeDualRule('y', ['command', 'shift']) +
-        makeDualRule('z', ['command', 'shift'], ["any"], appExclusions) +
+        makeDualRule('z', ['command', 'shift']) +
         makeDualRule(';', ['command', 'shift']) +
         makeDualRule('{', ['command', 'shift']) +
+        makeDualRule('}', ['command', 'shift']) +
         makeDualRule('f', ['command', 'option']),
     },
   ],
