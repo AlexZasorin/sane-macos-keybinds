@@ -142,7 +142,7 @@ local makeDualRule(key, mandatory_modifiers, optional_modifiers=[], except_apps=
         makeDualRule('z', ['command', 'shift'], ["any"], appExclusions) +
         makeDualRule(';', ['command', 'shift']) +
         makeDualRule('{', ['command', 'shift']) +
-        makeDualRule('}', ['command', 'shift']),
+        makeDualRule('f', ['command', 'option']),
     },
   ],
 }
