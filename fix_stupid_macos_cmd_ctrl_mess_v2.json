@@ -2190,23 +2190,43 @@
                "type": "basic"
             },
             {
+               "conditions": [ ],
                "from": {
-                  "key_code": "left_command"
+                  "modifiers": {
+                     "mandatory": [
+                        "command"
+                     ],
+                     "optional": [ ]
+                  },
+                  "pointing_button": "button1"
                },
                "to": [
                   {
-                     "key_code": "left_control"
+                     "modifiers": [
+                        "control"
+                     ],
+                     "pointing_button": "button1"
                   }
                ],
                "type": "basic"
             },
             {
+               "conditions": [ ],
                "from": {
-                  "key_code": "left_control"
+                  "modifiers": {
+                     "mandatory": [
+                        "control"
+                     ],
+                     "optional": [ ]
+                  },
+                  "pointing_button": "button1"
                },
                "to": [
                   {
-                     "key_code": "left_command"
+                     "modifiers": [
+                        "command"
+                     ],
+                     "pointing_button": "button1"
                   }
                ],
                "type": "basic"

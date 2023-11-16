@@ -22,6 +22,9 @@ local makeSimpleRule(key_code_from, key_code_to, except_apps=[]) = [
     'type': 'basic',
     'from': {
       'key_code': key_code_from,
+      'modifiers': {
+        'optional': [],
+      },
     },
     'to': [
       {
@@ -112,8 +115,7 @@ local commandShiftRules = [
       manipulators:
         commandRules +
         makeDualRule(['command'], 'e', [], terminal_app_exclusions + ['^com\\.microsoft\\.Outlook$']) +
-        makeSimpleRule('left_command', 'left_control') +
-        makeSimpleRule('left_control', 'left_command') +
+        makeDualRule(['command'], '', [], [], 'button1') +
         commandShiftRules +
         makeDualRule(['command', 'option'], 'f'),
     },
