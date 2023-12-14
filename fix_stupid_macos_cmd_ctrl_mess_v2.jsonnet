@@ -40,6 +40,22 @@ local makeSimpleRule(key_code_from, key_code_to, except_apps=[]) = [
   },
 ];
 
+local makeManipulator(from_key, to_key, variable_name) = {
+  "type": "basic",
+  "conditions": [
+    {
+      "type": "variable_if",
+      "name": variable_name,
+      "value": 1
+    }
+  ],
+  "from": {
+    "key_code": from_key,
+    "modifiers": { "optional": ["any"] }
+  },
+  "to": [{ "key_code": to_key }]
+};
+
 local makeDualRule(mandatory_modifiers, key='', optional_modifiers=[], except_apps=[], pointing_button='') = [
   // Rule to swap Command to Control
   {
@@ -118,6 +134,29 @@ local commandShiftRules = [
         makeDualRule(['command'], '', [], [], 'button1') +
         commandShiftRules +
         makeDualRule(['command', 'option'], 'f'),
+    },
+    {
+      "description": "Map Caps Lock + hjkl to Arrow Keys with Caps Lock State Tracking",
+      "manipulators": [
+        makeManipulator("h", "left_arrow", "caps_lock_pressed"),
+        makeManipulator("j", "down_arrow", "caps_lock_pressed"),
+        makeManipulator("k", "up_arrow", "caps_lock_pressed"),
+        makeManipulator("l", "right_arrow", "caps_lock_pressed"),
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            { "set_variable": { "name": "caps_lock_pressed", "value": 1 } }
+          ],
+          "to_after_key_up": [
+            { "set_variable": { "name": "caps_lock_pressed", "value": 0 } }
+          ],
+          "to_if_alone": [{ "key_code": "escape" }],
+          "type": "basic"
+        }
+      ]
     },
   ],
 }
