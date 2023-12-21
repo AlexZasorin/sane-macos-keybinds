@@ -1,6 +1,7 @@
 local terminal_app_exclusions = [
   '^com\\.apple\\.Terminal$',
   '^com\\.googlecode\\.iterm2$',
+  '^com\\.microsoft\\.VSCode$',
   // Add any additional applications you wish to exclude
 ];
 
