@@ -134,7 +134,11 @@ local commandShiftRules = [
         makeDualRule(['command'], 'e', [], terminal_app_exclusions + ['^com\\.microsoft\\.Outlook$']) +
         makeDualRule(['command'], '', [], [], 'button1') +
         commandShiftRules +
-        makeDualRule(['command', 'option'], 'f'),
+        makeDualRule(['command', 'option'], 'f') +
+        makeSimpleRule('up_arrow', 'vk_none') +
+        makeSimpleRule('down_arrow', 'vk_none') +
+        makeSimpleRule('left_arrow', 'vk_none') +
+        makeSimpleRule('right_arrow', 'vk_none'),
     },
     {
       "description": "Map Caps Lock + hjkl to Arrow Keys with Caps Lock State Tracking",

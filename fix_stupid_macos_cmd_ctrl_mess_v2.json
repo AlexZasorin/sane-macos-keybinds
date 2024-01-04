@@ -4656,6 +4656,62 @@
                   }
                ],
                "type": "basic"
+            },
+            {
+               "from": {
+                  "key_code": "up_arrow",
+                  "modifiers": {
+                     "optional": [ ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "vk_none"
+                  }
+               ],
+               "type": "basic"
+            },
+            {
+               "from": {
+                  "key_code": "down_arrow",
+                  "modifiers": {
+                     "optional": [ ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "vk_none"
+                  }
+               ],
+               "type": "basic"
+            },
+            {
+               "from": {
+                  "key_code": "left_arrow",
+                  "modifiers": {
+                     "optional": [ ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "vk_none"
+                  }
+               ],
+               "type": "basic"
+            },
+            {
+               "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                     "optional": [ ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "vk_none"
+                  }
+               ],
+               "type": "basic"
             }
          ]
       },
